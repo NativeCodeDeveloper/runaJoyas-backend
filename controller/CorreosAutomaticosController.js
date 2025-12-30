@@ -43,7 +43,7 @@ export default class CorreosAutomaticosController {
                     ],
                     replyTo: {
                         email: "contacto@nativecode.cl",
-                        name: "Soporte Macar Repuestos",
+                        name: "Medify",
                     },
                     subject: asunto,
                     htmlContent: `
@@ -53,7 +53,7 @@ export default class CorreosAutomaticosController {
                                 ${mensaje.replace(/\n/g, '<br/>')}
                             </div>
                             <p style="margin-top: 20px; color: #64748b; font-size: 14px;">
-                                Si tienes alguna consulta adicional, no dudes en nuestros canales de contacto.
+                                Si tienes alguna consulta adicional, en consultar nuestros canales de contacto.
                             </p>
                         </div>
                     `,
@@ -190,7 +190,7 @@ export default class CorreosAutomaticosController {
                 },
                 body: JSON.stringify({
                     sender: {
-                        name: "E-Commerce ProSuite",
+                        name: "Medify",
                         email: "contacto@nativecode.cl", // remitente de TU dominio
                     },
                     to: [
@@ -200,7 +200,7 @@ export default class CorreosAutomaticosController {
                         },
                         {
                             email: "contacto@nativecode.cl", // copia para ti
-                            name: "NativeCode",
+                            name: "Medify",
                         },
                     ],
                     replyTo: {
@@ -209,8 +209,8 @@ export default class CorreosAutomaticosController {
                     },
                     subject: `Comprobante de compra #${venta.codigo || venta.id || ""}`,
                     htmlContent: `
-                    <h2>Gracias por tu compra, ${cliente.nombre}</h2>
-                    <p>Este es el comprobante de tu compra realizada en <strong>${process.env.NOMBRE_EMPRESA} ProSuite</strong>.</p>
+                    <h2>Gracias por tu Preferencia, ${cliente.nombre}</h2>
+                    <p>Este es el comprobante de tu reserva realizada en <strong>${process.env.NOMBRE_EMPRESA} Medify</strong>.</p>
                     <h3>Datos de la compra</h3>
                     <p><strong>Código de pedido:</strong> ${venta.codigo || "-"}<br/>
                     <strong>Método de pago:</strong> ${venta.medioPago || "-"}<br/>
@@ -235,7 +235,7 @@ export default class CorreosAutomaticosController {
                         Total pagado: $${totalTexto} CLP
                     </h3>
 
-                    <p>Ante cualquier duda sobre tu compra, porfavor contacta a nuestros canales de ventas oficiales.</p>
+                    <p>Ante cualquier duda sobre tu pago, porfavor contacta a nuestros canales de reserva oficiales.</p>
                 `,
                 }),
             });

@@ -11,6 +11,7 @@ import mercadoPagoRouter from "./view/mercadoPagoRoutes.js";
 import pedidosRoutes from "./view/pedidosRoutes.js";
 import cuponesRoutes from "./view/cuponesRoutes.js";
 import correosRoutes from "./view/correosRoutes.js";
+import cloudflareRoutes from "./view/cloudflareRoutes.js";
 
 
 const app = express();
@@ -30,6 +31,7 @@ app.use(cors(corsConfig));
 app.get("/", (req, res) => { res.send("Hola mundo"); });
 app.use("/pedidos", pedidosRoutes);
 app.use("/correo", correosRoutes);
+app.use("/cloudflare", cloudflareRoutes);
 app.use("/cupon", cuponesRoutes);
 app.use("/pagosMercadoPago", mercadoPagoRouter);
 app.use("/producto", productoRoute);

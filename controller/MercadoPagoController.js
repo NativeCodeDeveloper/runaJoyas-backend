@@ -4,6 +4,7 @@ import MercadoPago from '../model/MercadoPago.js';
 import PedidoComprasController from "../controller/PedidoComprasController.js";
 import PedidoCompras from "../model/PedidoCompras.js";
 import PedidoDetalle from "../model/PedidoDetalle.js";
+import CorreosAutomaticosController from "./CorreosAutomaticosController.js";
 
 dotenv.config();
 
@@ -266,6 +267,11 @@ export const recibirPago = async (req, res) => {
                     return res.status(200).json({ received: true });
 
                 }
+
+
+
+                const correosControllerClass = new CorreosAutomaticosController();
+
 
             }catch(error){
                 return console.error('Error al validar preference_id:', error);
